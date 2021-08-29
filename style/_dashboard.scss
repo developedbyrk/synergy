@@ -1,0 +1,86 @@
+.dashboard_related {
+  width: 81.5%;
+  padding-bottom: 71px;
+
+  .dashboard {
+    h3 {
+      margin: 20px 0;
+    }
+
+    &__row {
+      @include flex(row);
+      @include columnsStyle(5px);
+      padding: 24px 17px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    &__title {
+      padding-left: 18px;
+      font-size: 18px;
+      font-weight: 500;
+
+      &.going {
+        position: relative;
+        bottom: -9px;
+      }
+    }
+
+    &_button {
+      padding-left: 110px;
+
+      button {
+        color: $blueColor;
+        font-size: 12px;
+        border: 1px solid $blueColor;
+        padding: 12px 19px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: transparent;
+        width: 149px;
+        cursor: pointer;
+      }
+    }
+
+    .progress-bar {
+      @include flex(row);
+      font-size: 14px;
+      font-weight: normal;
+      align-items: center;
+      color: $grayColor;
+      padding-top: 5px;
+
+      p {
+        background: $lightGreen;
+        width: 121px;
+        height: 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+
+        span {
+          border-radius: 5px;
+          display: block;
+          width: 33%;
+          height: 100%;
+          background-color: $greenColor;
+        }
+      }
+    }
+
+    .button_done {
+      button {
+        border: none;
+        color: #4a9b4a;
+        padding-left: 0;
+        @include flex(row);
+
+        img {
+          width: 21px;
+          position: relative;
+          top: -3px;
+          margin-right: 9px;
+        }
+      }
+    }
+  }
+}

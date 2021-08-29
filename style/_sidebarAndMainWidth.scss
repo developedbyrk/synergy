@@ -1,0 +1,82 @@
+.inner-wrapper {
+  #site-main-content {
+    width: 83%;
+
+    .bottom_content {
+      @include flex(row);
+      justify-content: space-between;
+      padding: 15px 18.7% 15px 60px;
+    }
+
+    .sidebar {
+      @include flex(column);
+      gap: 10px;
+      padding: 0 0 0 16px;
+      width: 18.2%;
+
+      h3 {
+        margin: 20px 0 10px;
+      }
+
+      &__detail {
+        @include columnsStyle(10px);
+        padding: 20px 0 20px 20px;
+
+        h2 {
+          font-weight: normal;
+          font-size: 46px;
+
+          span {
+            color: $grayColor;
+            font-size: 14px;
+            position: relative;
+            left: -4px;
+          }
+        }
+      }
+
+      &__title {
+        font-size: 14px;
+        font-weight: bold;
+        color: $grayColor;
+      }
+
+      &__all {
+        position: relative;
+        top: -3px;
+
+        a {
+          font-size: 14px;
+          font-weight: bold;
+
+          img {
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+// Menu close
+.slide-menu {
+  #site-main-content {
+    width: 94%;
+
+    .bottom_content,
+    .greetings,
+    .header {
+      padding-left: 10.2%;
+      padding-right: 16.5%;
+    }
+
+    .dashboard_related {
+      width: 74.5%;
+    }
+
+    .sidebar {
+      width: 25.5%;
+      padding: 0 0 0 20px;
+    }
+  }
+}

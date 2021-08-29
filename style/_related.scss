@@ -1,0 +1,45 @@
+.related {
+  h3 {
+    padding: 50px 0 20px;
+  }
+  .related__articles {
+    @include flex(row);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__item {
+    @include columnsStyle(10px);
+    width: 31%;
+    flex-grow: 1;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    flex: 0 0 31%;
+
+    img {
+      border-radius: 5px;
+      max-width: 100%;
+    }
+  }
+
+  &__all {
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_read {
+    @include flex(row);
+    align-items: flex-end;
+
+    a {
+      font-size: 14px;
+      font-weight: bold;
+
+      img {
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}

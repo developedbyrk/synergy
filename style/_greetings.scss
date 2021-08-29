@@ -1,0 +1,24 @@
+.greetings {
+  padding: 50px 18.7% 15px 60px;
+
+  h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.7px;
+  }
+
+  .message {
+    @include flex(row);
+    align-items: center;
+    background-color: $blueColor;
+    color: $whiteColor;
+    padding: 20px;
+    border-radius: 7px;
+
+    p {
+      padding-left: 20px;
+      font-size: 18px;
+      letter-spacing: 0.4px;
+    }
+  }
+}

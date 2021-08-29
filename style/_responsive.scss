@@ -1,0 +1,289 @@
+@include md {
+  .sidenav ul li a {
+    padding-right: 0;
+    font-size: 20px;
+  }
+  .header {
+    padding: 20px 40px 16px 40px;
+  }
+
+  .greetings {
+    padding: 50px 40px 15px 40px;
+  }
+
+  .inner-wrapper {
+    #site-main-content {
+      .bottom_content {
+        padding: 50px 40px 15px 40px;
+      }
+    }
+  }
+
+  .slide-menu {
+    #site-main-content {
+      .bottom_content,
+      .greetings,
+      .header {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+  }
+
+  .header .user-chat {
+    margin-right: 4px;
+  }
+
+  .dashboard_related {
+    .dashboard_button {
+      padding-left: 30px;
+    }
+  }
+
+  .related {
+    .related__articles {
+      gap: 17px;
+    }
+  }
+  .medication {
+    max-width: 90%;
+  }
+}
+@include sm {
+  body {
+    overflow-x: hidden;
+  }
+  .sidenav {
+    min-width: 180px;
+    padding: 120px 15px 30px 15px;
+  }
+
+  .inner-wrapper {
+    .header {
+      .user-chat {
+        padding: 0 15px;
+      }
+
+      h6 {
+        font-size: 15px;
+      }
+
+      &__right {
+        width: 58%;
+      }
+    }
+
+    #site-main-content {
+      .sidebar__detail {
+        padding: 20px 0 20px 10px;
+
+        h2 {
+          font-weight: normal;
+          font-size: 36px;
+        }
+      }
+
+      .related {
+        &__item {
+          width: 47%;
+          flex: 0 0 47%;
+        }
+      }
+    }
+    .dashboard_related {
+      .dashboard {
+        &__row {
+          padding: 20px 10px;
+        }
+
+        &__title {
+          font-size: 15px;
+          padding-left: 10px;
+        }
+
+        &_button {
+          button {
+            padding: 12px;
+            width: 110px;
+          }
+        }
+      }
+    }
+  }
+
+  .medication__columns {
+    flex-direction: column;
+  }
+  .medication__left,
+  .medication__right {
+    width: 100%;
+  }
+}
+@include xsm {
+  .sidenav {
+    min-width: 130px;
+    padding: 40px 10px;
+
+    ul li {
+      height: 60px;
+
+      a {
+        font-size: 17px;
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  .greetings {
+    padding: 40px 20px 20px;
+
+    h1 {
+      font-size: 26px;
+    }
+    .message {
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        font-size: 15px;
+        padding: 0;
+      }
+    }
+  }
+
+  .inner-wrapper {
+    .header {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+
+      .user-chat {
+        height: 50px;
+      }
+
+      h6 {
+        font-size: 14px;
+      }
+
+      &__right {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+
+        .user-detail {
+          justify-content: center;
+        }
+      }
+    }
+
+    #site-main-content {
+      .bottom_content {
+        flex-direction: column;
+        padding: 40px 20px 20px;
+      }
+
+      .sidebar__detail {
+        h2 {
+          font-weight: normal;
+          font-size: 26px;
+        }
+      }
+      .dashboard_related {
+        width: 100%;
+        padding-bottom: 50px;
+
+        .dashboard {
+          h3 {
+            font-size: 23px;
+          }
+
+          &__row {
+            padding: 10px;
+          }
+
+          &_button {
+            padding-left: 0;
+          }
+
+          button {
+            width: auto;
+          }
+
+          .progress-bar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+
+          &__row {
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+        .related {
+          &__item {
+            width: 100%;
+            flex: 0 0 100%;
+            justify-content: center;
+          }
+
+          h3 {
+            font-size: 21px;
+          }
+        }
+      }
+      .sidebar {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+  &.slide-menu {
+    .sidenav {
+      min-width: 55px;
+    }
+
+    #site-main-content {
+      .dashboard_related {
+        width: 100%;
+      }
+    }
+
+    #site-main-content {
+      .sidebar {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  .overlay {
+    padding: 25px 0;
+    .medication {
+      &__right {
+        padding: 15px;
+
+        &__form {
+          .time-dose-input,
+          .reminder,
+          .dose-frequency {
+            flex-direction: column;
+            gap: 5px;
+          }
+          .time-dose #time {
+            width: 100%;
+            margin-right: 0;
+          }
+          .colors {
+            flex-wrap: wrap;
+          }
+          .icons img {
+            max-width: 55px;
+          }
+        }
+      }
+    }
+  }
+}

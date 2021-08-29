@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: width 0.2s, padding 0.2s;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: $blackColor;
+  font-size: 16px;
+  background-color: #f4f4f4;
+  letter-spacing: 0.3px;
+}
+#page-center {
+  max-width: 1366px;
+  margin: 0 auto;
+  position: relative;
+}
+.inner-wrapper {
+  @include flex(row);
+}
+a {
+  text-decoration: none;
+  color: $blueColor;
+}
+ul {
+  list-style: none;
+}
+//Typography
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 26px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}

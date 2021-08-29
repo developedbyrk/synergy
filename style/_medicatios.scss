@@ -1,0 +1,379 @@
+.overlay {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 110px 0;
+  background-color: rgba(17, 17, 17, 0.75);
+  display: none;
+
+  &.medication_open {
+    display: block;
+  }
+}
+.medication {
+  background-color: #fff;
+  max-width: 72%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  &__close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+
+    &::before,
+    &::after {
+      height: 3px;
+      background: #139bd7;
+      content: "";
+      position: absolute;
+      width: 30px;
+      top: 15px;
+      border-radius: 3px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(130deg);
+    }
+  }
+
+  h1 {
+    padding: 20px 30px 23px 10px;
+    font-size: 31px;
+    text-align: center;
+  }
+
+  &__columns {
+    @include flex(row);
+    justify-content: space-between;
+  }
+
+  &__left,
+  &__right {
+    background-color: #f4f4f4;
+  }
+
+  &__left {
+    width: 35%;
+    padding: 18px 15px 20px 18px;
+  }
+
+  &__item {
+    @include flex(row);
+    @include boxbg(5px);
+    margin-bottom: 10px;
+    align-items: center;
+    position: relative;
+
+    &.selected {
+      border: 1px solid $blueColor;
+      box-shadow: none;
+      cursor: pointer;
+    }
+
+    img {
+      padding: 0 28px 3px 18px;
+    }
+
+    h5 {
+      font-weight: 500;
+      font-size: 17px;
+      padding-bottom: 11px;
+    }
+
+    p,
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: $grayColor;
+    }
+
+    span {
+      position: absolute;
+      right: 8px;
+      top: 7px;
+      font-weight: 400;
+    }
+  }
+
+  &__right {
+    border-left: 4px solid #fff;
+    width: 65%;
+    padding: 18px 34px 20px 32px;
+
+    &__item {
+      justify-content: center;
+      padding-right: 43px;
+      margin-bottom: 15px;
+    }
+
+    &__form {
+      div {
+        padding: 20px 0 17px;
+        @include flex(column);
+
+        &.form_button {
+          display: block;
+          text-align: right;
+          padding: 5px 0;
+        }
+
+        div {
+          padding: 0;
+        }
+      }
+
+      label {
+        padding: 0 0 10px;
+        font-size: 16px;
+        color: $grayColor;
+        font-weight: 500;
+      }
+
+      .minus,
+      .plus,
+      .dminus,
+      .dplus {
+        cursor: pointer;
+      }
+
+      .dose-frequency {
+        padding-bottom: 4px;
+
+        label {
+          letter-spacing: 1.3px;
+          padding-right: 22px;
+        }
+
+        .plus {
+          @include flex(row);
+          color: $grayColor;
+          font-size: 14px;
+
+          span {
+            padding: 3px 0 0 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+
+      .reminder {
+        padding-top: 6px;
+        padding-bottom: 0;
+
+        label {
+          letter-spacing: 1.3px;
+        }
+      }
+
+      .form_color {
+        padding-top: 12px;
+      }
+
+      .prescribe {
+        padding-top: 13px;
+      }
+
+      .rx {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      textarea {
+        max-height: 170px;
+      }
+
+      .time-dose {
+        #time {
+          width: 343px;
+          padding: 7px 13px;
+          margin-right: 32px;
+        }
+      }
+
+      input[type="time"]::-webkit-calendar-picker-indicator {
+        background: none;
+        background: #fff url(../images/ic/clock.png) no-repeat 98% 50%;
+      }
+
+      input,
+      select,
+      textarea,
+      .icons-color {
+        border: 2px solid #e5e5e5;
+        line-height: 1.5;
+        padding: 9px 13px;
+        border-radius: 5px;
+        font-size: 17px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .info {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      select {
+        appearance: none;
+        position: relative;
+        background: #fff url(../images/ic/arrow-down.png) no-repeat 98% 50%;
+        color: $grayColor;
+      }
+
+      #frequency {
+        color: $blackColor;
+      }
+
+      .dose-frequency,
+      .time-dose-input,
+      .reminder,
+      .icons,
+      .colors {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      #dose,
+      #number {
+        background-color: transparent;
+        width: 50px;
+        padding: 9px 10px;
+        margin: 0 10px;
+      }
+
+      .icons-color {
+        background-color: $whiteColor;
+        padding: 9px 9px 12px 9px;
+      }
+
+      .icons {
+        flex-wrap: wrap;
+
+        img {
+          border: 2px solid #e5e5e5;
+          margin: 0 20px 15px 0;
+          padding: 4px;
+          max-width: 58px;
+        }
+      }
+
+      .colors {
+        span {
+          width: 45px;
+          height: 45px;
+          background-color: $whiteColor;
+          border: 2px solid #e5e5e5;
+          margin-right: 5px;
+        }
+        .pink {
+          background-color: $pinkColor;
+        }
+
+        .red {
+          background-color: $redColor;
+        }
+
+        .orange {
+          background-color: $orangeColor;
+        }
+
+        .yellow {
+          background-color: $yellowColor;
+        }
+
+        .green {
+          background-color: $shineGreen;
+        }
+
+        .dark-blue {
+          background-color: $darkBlue;
+        }
+
+        .violet {
+          background-color: $violetColor;
+        }
+
+        .maroon {
+          background-color: $maroonColor;
+        }
+      }
+    }
+  }
+
+  &__button {
+    background-color: #0c70b0;
+    padding: 12px 34px;
+    border-radius: 25px;
+    color: $whiteColor;
+    border: none;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+//Checkbox toggle
+.reminder {
+  .cm-toggle {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin: 10px;
+    padding: 0;
+  }
+  .cm-toggle:after {
+    content: "";
+    width: 53px;
+    height: 32px;
+    display: inline-block;
+    background: #979797;
+    border-radius: 18px;
+    clear: both;
+  }
+  .cm-toggle:before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .cm-toggle:checked:before {
+    left: 22px;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .cm-toggle:checked:after {
+    background: $greenColor;
+  }
+}
