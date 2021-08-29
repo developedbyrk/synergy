@@ -1,5 +1,5 @@
 
-//ariables
+//variables
 const mobileTrigger = document.querySelector('.mobile-trigger');
 const innerWrapper = document.querySelector('.inner-wrapper');
 const openMedication = document.querySelector('.open_medication');
